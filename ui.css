@@ -1,0 +1,232 @@
+.music-button{
+  position: fixed;
+  top:20px;
+  right: 20px;
+  height: 40px;
+  width: 170px;
+
+  font-size: 20px;
+  border-radius:20px;
+  border: none;
+  background-color: gray;
+  color: white;
+  transition: opacity 0.15s;
+}
+
+.music-button:active{
+  opacity: 0.7;
+}
+
+.dark-mode-button{
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  height: 40px;
+  width: 170px;
+  background-color: gray;
+
+  font-size: 20px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  transition: opacity 0.15s;
+}
+
+.dark-mode-button:active{
+  opacity: 0.7;
+}
+
+.nadpis{
+  font-size: 70px;
+  font-family: "Poetsen One", sans-serif;
+}
+
+.nadpis-flex{
+  display: flex;
+  justify-content: center;
+}
+
+.random-button-flex{
+  display: flex;
+  justify-content: center;
+}
+
+.random-button{
+  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(190, 97, 68);
+  background-color: gray;
+  color: white;
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.random-button:active{
+  opacity: 0.7;
+}
+
+.random-character{
+  width: 150px;
+}
+
+.random-character-field{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  padding: 30px;
+  border-radius:50px;
+  background-color: rgb(212, 212, 212);
+}
+
+.character-name{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 50px
+}
+
+.filter-characters-flex{
+  display: flex;
+  justify-content: center;
+}
+
+.normal-button-no{
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(184, 209, 125);
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.normal-button-no:active{
+  opacity: 0.7;
+}
+
+.normal-button-yes{
+  background-color: rgb(184, 209, 125);
+}
+
+.tainted-button-no{
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(85, 114, 84);
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.tainted-button-no:active{
+  opacity: 0.7;
+}
+
+.tainted-button-yes{
+  background-color: rgb(85, 114, 84);
+}
+
+.easy-button-no{
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(206, 209, 37);
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.easy-button-no:active{
+  opacity: 0.7;
+}
+
+
+.easy-button-yes{
+  background-color: rgb(206, 209, 37);
+}
+
+.hard-button-no{
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(211, 29, 29);
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.hard-button-no:active{
+  opacity: 0.7;
+}
+
+
+.hard-button-yes{
+  background-color: rgb(211, 29, 29);
+}
+
+.funny-button-no{
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(38, 230, 230);
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.funny-button-no:active{
+  opacity: 0.7;
+}
+
+
+.funny-button-yes{
+  background-color: rgb(38, 230, 230);
+}
+
+.not-funny-button-no{
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(164, 112, 212);
+  border-style: none;
+  transition: opacity 0.15s;
+}
+
+.not-funny-button-no:active{
+  opacity: 0.7;
+}
+
+
+.not-funny-button-yes{
+  background-color: rgb(164, 112, 212);
+}

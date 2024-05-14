@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issac Character Generator</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="ui.css">
+    <link rel="stylesheet" href="dark_mode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+  </head>
+  <body class="js-body">
+    <button class="music-button js-music-button" onclick="
+        if(audioOn === 1){
+          audioOn = 0;
+          document.querySelector('.js-music-button').innerHTML = 'Music: OFF';
+          cancelAudio();
+        }else{
+          audioOn = 1;
+          document.querySelector('.js-music-button').innerHTML = 'Music: ON';
+        }
+      ">
+      Music: ON
+    </button>
+    <button class="dark-mode-button js-dark-mode-button">
+      Dark Mode: OFF
+    </button>
+    <div class="nadpis-flex">
+      <p class="nadpis js-nadpis">
+        Issac Random Generator
+      </p>
+    </div>
+    <div class="random-button-flex">
+      <button class="random-button" onclick="
+          if(randomButtonOn === 1){
+            randomButtonOn = 0;
+            filler();
+            callFunctionMultipleTimes(filler, 10);
+            
+            setTimeout(()=>{
+              if(normalCharacters === 1){
+                randomNum = getRandomInt(17);
+              }
+              if(taintedCharacters === 1){
+                randomNum = getRandomInt(17) + 17;
+              }
+              if(easyCharacters === 1){
+                let hardness = 1;
+
+                while(hardness === 1){
+                  randomNum = getRandomInt(34);
+                  hardness = addHard().hard;
+                }
+                hardness = 1;
+              }
+              if(hardCharacters === 1){
+                let hardness = 0;
+
+                while(hardness === 0){
+                  randomNum = getRandomInt(34);
+                  hardness = addHard().hard;
+                }
+                hardness = 0;
+              }
+              if(normalCharacters === 0 && taintedCharacters === 0 && easyCharacters === 0 && hardCharacters === 0){
+                randomNum = getRandomInt(34);
+              };
+              addPicture();
+              addName();
+
+              if(audioOn === 1){
+                addMusicToCharacter(randomNum);
+                playAudio();
+                addClickySound();
+                playClickyAudio();          
+              }
+
+              randomButtonOn = 1;
+            }, 2400);
+          }
+        ">I feel lucky
+        </button>
+    </div>
+    <div class="random-character-field js-random-character-field">
+      <!--<img class= "random-character" src="character_pictures/23.webp">-->
+    </div>
+
+    <div class="character-name js-character-name">
+      ???
+    </div>
+
+    <div class="filter-characters-flex">
+      <button class="normal-button-no js-normal-button" onclick="
+          if(normalCharacters === 1){
+            normalCharacters = 0;
+            element.classList.remove('normal-button-yes');
+          }else{
+            normalCharacters = 1;
+            taintedCharacters = 0;
+            easyCharacters = 0;
+            hardCharacters = 0;
+            funnyCharacters = 0;
+            notFunnyCharacters = 0;
+            element.classList.add('normal-button-yes');
+            element.classList.remove('tainted-button-yes');
+            element.classList.remove('easy-button-yes');
+            element.classList.remove('hard-button-yes');
+            element.classList.remove('funny-button-yes');
+            element.classList.remove('not-funny-button-yes');
+          }
+
+          actualButtonStatus();
+        ">
+        Normal
+      </button>
+
+      <button class="tainted-button-no js-tainted-button" onclick="
+
+          if(taintedCharacters === 1){
+            taintedCharacters = 0;
+            element.classList.remove('tainted-button-yes');
+          }else {
+            normalCharacters = 0;
+            taintedCharacters = 1;
+            easyCharacters = 0;
+            hardCharacters = 0;
+            funnyCharacters = 0;
+            notFunnyCharacters = 0;
+
+            element.classList.remove('normal-button-yes');
+            element.classList.add('tainted-button-yes');
+            element.classList.remove('easy-button-yes');
+            element.classList.remove('hard-button-yes');
+            element.classList.remove('funny-button-yes');
+            element.classList.remove('not-funny-button-yes');
+          }
+          
+          actualButtonStatus();
+        ">
+        Tainted?
+      </button>
+
+      <button class="easy-button-no js-easy-button" onclick="
+          if(easyCharacters === 1){
+            easyCharacters = 0;
+            element.classList.remove('easy-button-yes');
+          }else {
+            normalCharacters = 0;
+            taintedCharacters = 0;
+            easyCharacters = 1;
+            hardCharacters = 0;
+            funnyCharacters = 0;
+            notFunnyCharacters = 0;
+
+            element.classList.remove('normal-button-yes');
+            element.classList.remove('tainted-button-yes');
+            element.classList.add('easy-button-yes');
+            element.classList.remove('hard-button-yes');
+            element.classList.remove('funny-button-yes');
+            element.classList.remove('not-funny-button-yes');
+
+          }
+
+          actualButtonStatus();
+        ">
+        Easy Characters
+      </button>
+
+      <button class="hard-button-no js-hard-button" onclick="
+          if(hardCharacters === 1){
+            hardCharacters = 0;
+            element.classList.remove('hard-button-yes');
+          }else {
+            normalCharacters = 0;
+            taintedCharacters = 0;
+            easyCharacters = 0;
+            hardCharacters = 1;
+            funnyCharacters = 0;
+            notFunnyCharacters = 0;
+
+            element.classList.remove('normal-button-yes');
+            element.classList.remove('tainted-button-yes');
+            element.classList.remove('easy-button-yes');
+            element.classList.add('hard-button-yes');
+            element.classList.remove('funny-button-yes');
+            element.classList.remove('not-funny-button-yes');
+
+          }
+
+          actualButtonStatus();
+        ">
+        Hard Characters
+      </button>
+      <!-- Currently Not Working<button class="funny-button-no js-funny-button" onclick="
+          if(funnyCharacters === 1){
+            funnyCharacters = 0;
+            element.classList.remove('funny-button-yes');
+          }else {
+            normalCharacters = 0;
+            taintedCharacters = 0;
+            easyCharacters = 0;
+            hardCharacters = 0;
+            funnyCharacters = 1;
+            notFunnyCharacters = 0;
+
+            element.classList.remove('normal-button-yes');
+            element.classList.remove('tainted-button-yes');
+            element.classList.remove('easy-button-yes');
+            element.classList.remove('hard-button-yes');
+            element.classList.add('funny-button-yes');
+            element.classList.remove('not-funny-button-yes');
+          }
+
+          actualButtonStatus();
+        ">
+        Funny
+      </button>
+      <button class="not-funny-button-no js-not-funny-button" onclick="
+          if(notFunnyCharacters === 1){
+            notFunnyCharacters = 0;
+            element.classList.remove('not-funny-button-yes');
+          }else {
+            normalCharacters = 0;
+            taintedCharacters = 0;
+            easyCharacters = 0;
+            hardCharacters = 0;
+            funnyCharacters = 0;
+            notFunnyCharacters = 1;
+
+            element.classList.remove('normal-button-yes');
+            element.classList.remove('tainted-button-yes');
+            element.classList.remove('easy-button-yes');
+            element.classList.remove('hard-button-yes');
+            element.classList.remove('funny-button-yes');
+            element.classList.add('not-funny-button-yes');
+          }
+
+          actualButtonStatus();
+        ">
+        Not Funny
+      </button>-->
+    </div>
+
+    <script src="character_database.js"></script>
+    <script src="overall.js"></script>
+    <script src="audio.js"></script>
+    <script src="dark_mode.js"></script>
+  </body>
+</html>
